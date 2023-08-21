@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="top">
+      <div class="pic-wrapper">
+        <img src="./pics/mt1.jpeg" class="mt-pic" />
+        <img src="./pics/mt2.jpeg" class="mt-pic" />
+        <img src="./pics/mt3.jpeg" class="mt-pic" />
+        <img src="./pics/mt4.jpeg" class="mt-pic" />
+      </div>
+    </div>
+    <div class="rest">
+      <form>
+        <div class="item">
+          <legend>Flavor:</legend>
+          <div class="flavor-selection">
+            <div class="flavor-choice">
+              <input
+                type="radio"
+                name="flavor"
+                id="taro"
+                value="taro"
+                required
+              />
+              <label for="taro" class="flavor-label">Taro</label>
+            </div>
+            <div class="flavor-choice">
+              <input
+                type="radio"
+                name="flavor"
+                id="peach"
+                value="peach"
+                required
+              />
+              <label for="peach" class="flavor-label">Peach</label>
+            </div>
+            <div class="flavor-choice">
+              <input
+                type="radio"
+                name="flavor"
+                id="grapes"
+                value="grape"
+                required
+              />
+              <label for="grapes" class="flavor-label">Grapes</label>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <legend>Number:</legend>
+          <input type="number" name="num" value="0" required />
+        </div>
+        <div class="item">
+          <legend>Size:</legend>
+          <div class="size-selection">
+            <div class="size-choice">
+              <input
+                type="radio"
+                name="size"
+                id="medium"
+                value="medium"
+                required
+              />
+              <label for="medium" class="size-label">Medium</label>
+            </div>
+            <div class="size-choice">
+              <input
+                type="radio"
+                name="size"
+                id="large"
+                value="large"
+                required
+              />
+              <label for="large" class="size-label">Large</label>
+            </div>
+            <div class="size-choice">
+              <input
+                type="radio"
+                name="size"
+                id="exlarge"
+                value="extra-large"
+                required
+              />
+              <label for="exlarge" class="size-label">Extra Large</label>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <legend>Sugar Level:</legend>
+          <select name="sl" id="sl" required>
+            <option value="0%">0%</option>
+            <option value="30%">30%</option>
+            <option value="70%">70%</option>
+            <option value="100%">100%</option>
+          </select>
+        </div>
+        <div class="item">
+          <legend>Free Toppings:</legend>
+          <div class="ckbox">
+            <div class="blk">
+              <input type="checkbox" name="ft" id="cream" />
+              <label for="cream">Cream</label>
+            </div>
+            <div class="blk">
+              <input type="checkbox" name="ft" id="bubble" />
+              <label for="bubble">Bubble</label>
+            </div>
+            <div class="blk">
+              <input type="checkbox" name="ft" id="pudding" />
+              <label for="pudding">Pudding</label>
+            </div>
+            <div class="blk">
+              <input type="checkbox" name="ft" id="jelly" />
+              <label for="jelly">Jelly</label>
+            </div>
+            <div class="blk">
+              <input type="checkbox" name="ft" id="aloe" />
+              <label for="aloe">Aloe</label>
+            </div>
+            <div class="blk">
+              <input type="checkbox" name="ft" id="bean" />
+              <label for="bean">Red Bean</label>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <legend>Paid Toppings:</legend>
+          <div class="ckbox">
+            <div class="blk">
+              <input type="checkbox" name="pt" id="sago" />
+              <label for="sago">Sago (2$)</label>
+            </div>
+            <div class="blk">
+              <input type="checkbox" name="pt" id="ball" />
+              <label for="ball">Crystal Ball (3$)</label>
+            </div>
+            <div class="blk">
+              <input type="checkbox" name="pt" id="ccn" />
+              <label for="ccn">Coconut Jelly (4$)</label>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <legend>Ice:</legend>
+          <div class="ice-selection">
+            <div class="ice-choice">
+              <input
+                type="radio"
+                name="ice"
+                id="yes-ice"
+                value="yes-ice"
+                required
+              />
+              <label for="yes-ice" class="ice-label">Yes</label>
+            </div>
+            <div class="ice-choice">
+              <input
+                type="radio"
+                name="ice"
+                id="no-ice"
+                value="no-ice"
+                required
+              />
+              <label for="no-ice" class="ice-label">No</label>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <legend>Address:</legend>
+          <textarea name="address" id="address" rows="8" required></textarea>
+        </div>
+        <div class="item">
+          <legend>Phone Number:</legend>
+          <input type="tel" name="phone" required />
+        </div>
+        <div class="item">
+          <legend>Arrival Time:</legend>
+          <input type="time" name="time" required />
+        </div>
+        <div class="item">
+          <legend>Comments:</legend>
+          <textarea name="comments" id="comments" rows="8"></textarea>
+        </div>
+        <div class="item">
+          <legend></legend>
+          <button class="submit" type="submit" onclick="notify">Submit</button>
+          <button class="reset" type="reset">Reset</button>
+        </div>
+        <script>
+          const constructString = (fd) => {
+            const freeToppings = fd.getAll("ft").join(", ") || "-";
+            const paidToppings = fd.getAll("pt").join(", ") || "-";
+
+            const text = `
+                【Your Order has been Placed!】
+                ------------------------
+                Flavor: ${fd.get("flavor")}
+                Number: ${fd.get("num")}
+                Size: ${fd.get("size")}
+                Sugar Level: ${fd.get("sl")}
+                Free Toppings: ${freeToppings}
+                Paid Toppings: ${paidToppings}
+                Ice: ${fd.get("ice")}
+                Address: ${fd.get("address")}
+                Phone Number: ${fd.get("phone")}
+                Arrival Time: ${fd.get("time")}
+                Comments: ${fd.get("comments") || "-"}
+            `;
+            return text;
+          };
+
+          const notify = (e) => {
+            e.preventDefault();
+            const formData = new FormData(orderForm);
+            alert(constructString(formData));
+          };
+        </script>
+      </form>
+    </div>
+  </body>
+</html>

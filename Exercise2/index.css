@@ -1,0 +1,110 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: #434343;
+}
+
+.pic-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 80%;
+}
+
+.mt-pic {
+  width: 0;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  flex-basis: 20%;
+}
+
+.mt-pic:hover {
+  transform: rotate(30deg); /* rotate by 30 degrees on hover */
+}
+
+.flavor-selection,
+.size-selection,
+.ice-selection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  /* justify-content: center; */
+  display: flex;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.rest {
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: auto;
+}
+
+legend {
+  text-align: right;
+  margin-right: 10px;
+  flex-basis: 30%;
+  flex-shrink: 0;
+}
+
+.flavor-choice,
+.size-choice,
+.ice-choice {
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.flavor-label,
+.size-label,
+.ice-label {
+  padding: 0 8px;
+}
+
+#taro,
+#peaches,
+#grapes {
+  margin: 0;
+}
+
+.ckbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blk label {
+  padding: 0 8px;
+}
+
+.blk {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+button {
+  height: 32px;
+  padding: 4px 15px;
+  border-radius: 6px;
+  margin-right: 12px;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.submit {
+  background-color: #1677ff;
+  color: #fff;
+}
