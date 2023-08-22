@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="rest">
-      <form>
+      <form onsubmit="notify(event)">
         <div class="item">
           <legend>Flavor:</legend>
           <div class="flavor-selection">
@@ -191,9 +191,10 @@
         </div>
         <div class="item">
           <legend></legend>
-          <button class="submit" type="submit" onclick="notify">Submit</button>
+          <button class="submit" type="submit">Submit</button>
           <button class="reset" type="reset">Reset</button>
         </div>
+
         <script>
           const constructString = (fd) => {
             const freeToppings = fd.getAll("ft").join(", ") || "-";
@@ -219,11 +220,26 @@
 
           const notify = (e) => {
             e.preventDefault();
+            const orderForm = document.querySelector("form");
             const formData = new FormData(orderForm);
             alert(constructString(formData));
           };
         </script>
       </form>
+      <div class="back-to-top" onclick="backToTop(event)">Top</div>
+      <script>
+        const btt = document.querySelector(".back-to-top");
+        window.onscroll = function () {
+          if (window.pageYOffset > 20) {
+            btt.style.display = "block";
+          } else {
+            btt.style.display = "none";
+          }
+        };
+        const backToTop = (e) => {
+          window.scroll({ top: 0, left: 0, behavior: "smooth" });
+        };
+      </script>
     </div>
   </body>
 </html>

@@ -108,3 +108,18 @@ button {
   background-color: #1677ff;
   color: #fff;
 }
+
+.back-to-top {
+  text-align: center;
+  position: fixed;
+  height: 24px;
+  width: 24px;
+  border: 1px solid #595959;
+  padding: 4px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #595959;
+  right: 12px;
+  bottom: 12px;
+}
