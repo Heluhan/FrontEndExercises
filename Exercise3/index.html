@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="all">
+      <div class="round">hahaha</div>
+      <div class="main-game">
+        <div class="blc">
+          <div class="player">
+            <div class="pic rbt">
+              <div class="content">?</div>
+            </div>
+            <div class="text">
+              <div class="name">Robot</div>
+              <div class="score" id="rbtxt">Win : 0 | Lose : 0</div>
+            </div>
+          </div>
+        </div>
+        <div class="blc">
+          <div class="player">
+            <div class="pic human">
+              <div class="content">?</div>
+            </div>
+            <div class="text">
+              <div class="name">Player</div>
+              <div class="score" id="prtxt">Win : 0 | Lose : 0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="round-winner"></div>
+      <div class="rst">
+        <button class="nxt" onclick="nextRound(event)">Next Round</button>
+      </div>
+    </div>
+    <dialog id="choose">
+      <form>
+        <div>
+          <label>
+            You want to play:
+            <select name="rps" id="rps">
+              <option value="1">Rock</option>
+              <option value="0">Paper</option>
+              <option value="2">Scissors</option>
+            </select>
+          </label>
+        </div>
+        <button id="confirmBtn" value="default">Confirm</button>
+      </form>
+    </dialog>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+html,
+body,
+.all {
+  height: 100%;
+  margin: 0; /* Remove default margin from body */
+  padding: 0;
+  background-color: #7091f5;
+}
+
+.round {
+  text-align: center;
+  height: 30%;
+  width: auto;
+  visibility: hidden;
+  font-size: 40px;
+  line-height: 200px;
+}
+
+.main-game {
+  display: flex;
+  height: 40%;
+}
+
+.blc {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.pic {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player {
+  /* width: 30%; */
+}
+
+.content {
+  font-size: 30px;
+}
+
+.name,
+.score {
+  font-weight: 500;
+  padding: 10px 0;
+}
+.nxt {
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #793fdf;
+  color: white;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.rst {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+#confirmBtn {
+  margin-top: 15px;
+  width: 80px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #97fff4;
+  color: black;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+dialog {
+  border: 2px solid transparent;
+  background-color: #fffd8c;
+}
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.round-winner {
+  text-align: center;
+  font-size: 25px;
+}
