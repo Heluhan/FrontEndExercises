@@ -62,18 +62,25 @@ const renderDraw = () => {
   show.innerHTML = "The round is a draw.";
 };
 
-const terminate = (who) => {
+const terminate = (winner) => {
   const dialog = document.querySelector("#choose");
   dialog.close();
   let message = "";
-  if (who === "rb") {
+  if (winner === "rb") {
     message = "Robot wins the game !!";
-  } else if (who === "no") {
-    const rbtxt = document.getElementById("rbtxt").innerText;
-    const prtxt = document.getElementById("prtxt").innerText;
-    if (rbtxt === "Win : 1 | Lose : 0") {
+  } else if (winner === "no") {
+    const rbtxt = document.getElementById("rbtxt").innerHTML;
+    if (
+      rbtxt === "Win : 1 | Lose : 0" ||
+      rbtxt === "Win : 2 | Lose : 0" ||
+      rbtxt === "Win : 2 | Lose : 1"
+    ) {
       message = "Robot wins the game !!";
-    } else if (rbtxt === "Win : 0 | Lose : 1") {
+    } else if (
+      rbtxt === "Win : 0 | Lose : 1" ||
+      rbtxt === "Win : 0 | Lose : 2" ||
+      rbtxt === "Win : 1 | Lose : 2"
+    ) {
       message = "Player wins the game !!";
     } else {
       message = "The game is a draw.";
@@ -104,19 +111,6 @@ const startRender = (play) => {
   container_p.innerHTML = "";
   container_p.appendChild(pic_p);
 
-  // Render the header
-  const header = document.querySelector(".round");
-  const computedStyle = getComputedStyle(header);
-  if (computedStyle.visibility === "hidden") {
-    header.innerHTML = "Round 1";
-    header.style.visibility = "visible";
-  } else if (header.innerHTML === "Round 1") {
-    header.innerHTML = "Round 2";
-  } else if (header.innerHTML === "Round 2") {
-    header.innerHTML = "Round 3";
-    terminate("no");
-  }
-
   // Render the player status
   const playInt = parseInt(play);
   if (
@@ -131,6 +125,19 @@ const startRender = (play) => {
   } else {
     renderLose("pr");
     renderWin("rb");
+  }
+
+  // Render the header
+  const header = document.querySelector(".round");
+  const computedStyle = getComputedStyle(header);
+  if (computedStyle.visibility === "hidden") {
+    header.innerHTML = "Round 1";
+    header.style.visibility = "visible";
+  } else if (header.innerHTML === "Round 1") {
+    header.innerHTML = "Round 2";
+  } else if (header.innerHTML === "Round 2") {
+    header.innerHTML = "Round 3";
+    terminate("no");
   }
 };
 
