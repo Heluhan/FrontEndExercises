@@ -47,6 +47,7 @@ body,
 .score {
   font-weight: 500;
   padding: 10px 0;
+  text-align: center;
 }
 .nxt {
   width: 150px;

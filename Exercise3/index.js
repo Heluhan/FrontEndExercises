@@ -1,5 +1,5 @@
+const dialog = document.querySelector("#choose");
 const nextRound = (e) => {
-  const dialog = document.querySelector("#choose");
   dialog.showModal();
 };
 
@@ -146,4 +146,5 @@ form.onsubmit = (event) => {
   event.preventDefault();
   const formData = new FormData(form);
   startRender(formData.get("rps"));
+  dialog.close();
 };
